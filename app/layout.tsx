@@ -52,11 +52,11 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-[85%] mx-auto px-6 mt-8">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-4 md:px-8">
+      <body className="antialiased mx-auto px-4 sm:px-6 mt-8">
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-4 md:px-8 max-w-full md:max-w-[88%]">
           <Navbar />
-          <main className="pt-[80px]"> {/* ✅ 네비게이션 바 높이만큼 패딩 추가 */}
-          {children}
+          <main className="pt-[80px]">
+            {children}
           </main>
           <Footer />
           <Analytics />
@@ -66,3 +66,4 @@ export default function RootLayout({
     </html>
   )
 }
+
