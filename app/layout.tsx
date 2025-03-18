@@ -16,10 +16,10 @@ export const metadata: Metadata = {
   },
   description: 'CNU Vege Homepage.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'CNU Vege Homepage.',
+    title: 'CNU Vege Homepage',
+    description: '충남대학교 채소원예학연구실에 오신것을 환영합니다.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'CNU Vege Homepage',
     locale: 'en_US',
     type: 'website',
   },
