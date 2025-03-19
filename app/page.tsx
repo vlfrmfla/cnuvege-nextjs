@@ -2,12 +2,14 @@ import { BlogPosts } from "app/components/posts";
 import Image from "next/image";
 import { Noto_Sans_KR } from "next/font/google"; 
 
+
 // ✅ Noto Sans KR 폰트 설정
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-noto-sans-kr",
 });
+
 
 
 export default function Page() {

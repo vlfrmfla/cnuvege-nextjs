@@ -34,6 +34,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: '/favicon.ico',  // 기본 Favicon
+    shortcut: '/favicon.ico',  // 일부 브라우저에서 사용
+    apple: '/favicon.png',  // 애플 터치 아이콘 (iOS용)
+  },
 }
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
@@ -66,4 +71,3 @@ export default function RootLayout({
     </html>
   )
 }
-
