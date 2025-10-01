@@ -39,7 +39,18 @@ export default function Page() {
       <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Alumni</h2>
       <div className="mb-6"></div>
       <div className="flex flex-wrap gap-8">
-
+      <div className="flex flex-wrap items-start gap-10">
+        <MemberCard
+          name="백상훈 (Sanghoon Baek)"
+          src="/images/alumni_Baeksanghoon.jpeg"
+          alt="Almuni member"
+        />
+        <MemberCard
+          name="김준영 (Junyoung Kim)"
+          src="/images/almuni_Kimjunyoung.jpeg"
+          alt="Ph.D member"
+        />
+      </div>
       </div>
 
       {/* Master Course */}
