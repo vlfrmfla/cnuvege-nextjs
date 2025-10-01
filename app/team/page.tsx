@@ -35,30 +35,17 @@ export default function Page() {
     <section className="prose mx-auto bg-white py-8">
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Team members</h1>
 
-      {/* Alumni */}
-      <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Alumni</h2>
+      {/* Full time researcher */}
+      <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Full time researcher</h2>
       <div className="mb-6"></div>
       <div className="flex flex-wrap gap-8">
-      <div className="flex flex-wrap items-start gap-10">
         <MemberCard
-          name="백상훈 (Sanghoon Baek)"
-          src="/images/alumni_Baeksanghoon.jpeg"
-          alt="Almuni member"
+          name="배성한 (Sunghan Bae)"
+          src="/images/alumni1_baesunghan.jpeg"
+          alt="Alumni member"
         />
-        <MemberCard
-          name="김준영 (Junyoung Kim)"
-          src="/images/almuni_Kimjunyoung.jpeg"
-          alt="Ph.D member"
-        />
-      </div>
       </div>
 
-      {/* Master Course */}
-      <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Master's Course</h2>
-      <div className="mb-8"></div>
-      <div className="flex flex-wrap gap-6">
-        {/* 필요 시 여기에 추가 */}
-      </div>
 
       {/* Ph.D Course 섹션 */}
       <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Ph.D Course</h2>
@@ -78,15 +65,33 @@ export default function Page() {
         />
       </div>
 
-      {/* Full time researcher */}
-      <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Full time researcher</h2>
+      {/* Master Course */}
+      <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Master's Course</h2>
+      <div className="mb-8"></div>
+      <div className="flex flex-wrap gap-6">
+        {/* 필요 시 여기에 추가 */}
+      </div>
+
+
+
+
+
+      {/* Alumni */}
+      <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Alumni</h2>
       <div className="mb-6"></div>
       <div className="flex flex-wrap gap-8">
+      <div className="flex flex-wrap items-start gap-10">
         <MemberCard
-          name="배성한 (Sunghan Bae)"
-          src="/images/alumni1_baesunghan.jpeg"
-          alt="Alumni member"
+          name="백상훈 (Sanghoon Baek)"
+          src="/images/alumni_Baeksanghoon.jpeg"
+          alt="Almuni member"
         />
+        <MemberCard
+          name="김준영 (Junyoung Kim)"
+          src="/images/almuni_Kimjunyoung.jpg"
+          alt="Ph.D member"
+        />
+      </div>
       </div>
 
     </section>
