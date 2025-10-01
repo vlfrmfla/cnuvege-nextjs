@@ -42,7 +42,7 @@ export default function Page() {
         <MemberCard
           name="배성한 (Sunghan Bae)"
           src="/images/alumni1_baesunghan.jpeg"
-          alt="Alumni member"
+          alt="Full time researcher"
         />
       </div>
 
@@ -72,10 +72,6 @@ export default function Page() {
         {/* 필요 시 여기에 추가 */}
       </div>
 
-
-
-
-
       {/* Alumni */}
       <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Alumni</h2>
       <div className="mb-6"></div>
@@ -89,7 +85,7 @@ export default function Page() {
         <MemberCard
           name="김준영 (Junyoung Kim)"
           src="/images/almuni_Kimjunyoung.jpg"
-          alt="Ph.D member"
+          alt="Almuni member"
         />
       </div>
       </div>
