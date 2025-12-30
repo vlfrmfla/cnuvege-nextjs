@@ -10,21 +10,25 @@ function MemberCard({
   alt,
   scale = 0.9,   // 0.9 = 90% 크기. 필요 시 0.85~0.95로 조절
   oy = "50%",    // 세로 기준(객체 위치). "45%"면 약간 위로 올림
+  border = false, // 테두리 여부
+  contain = false, // true면 object-contain (잘림 없이 전체 표시)
 }: {
   name: string;
   src: string;
   alt: string;
   scale?: number;
   oy?: string;
+  border?: boolean;
+  contain?: boolean;
 }) {
   return (
     <div className="not-prose flex flex-col items-center gap-3">
-      {/* 원 프레임: 배경을 흰색으로 해서 눈에 띄는 배경색 제거 */}
-      <div className="size-40 md:size-44 rounded-full overflow-hidden relative bg-white">
+      {/* 원 프레임 */}
+      <div className={`size-40 md:size-44 rounded-full overflow-hidden relative bg-white ${border ? "border border-gray-300" : ""}`}>
         <img
           src={src}
           alt={alt}
-          className="w-full h-full object-cover transition-transform"
+          className={`w-full h-full transition-transform ${contain ? "object-contain" : "object-cover"}`}
           style={{ transform: `scale(${scale})`, objectPosition: `50% ${oy}` }}
         />
       </div>
@@ -47,8 +51,10 @@ export default function Page() {
           name="배성한 (Sunghan Bae)"
           src="/images/alumni1_baesunghan.jpeg"
           alt="Full time researcher"
-          scale={0.95}    // 증명사진은 살짝만 축소
+          scale={1.2}    // 증명사진은 살짝만 축소
           oy="50%"
+          border
+          contain
         />
       </div>
 
@@ -61,6 +67,7 @@ export default function Page() {
           alt="Ph.D member"
           scale={1}    // 야외/상반신 사진은 조금 더 축소
           oy="48%"        // 얼굴이 위로 치우치면 48~52%로 미세조정
+          border
         />
         <MemberCard
           name="신동욱 (Dongwook Shin)"
@@ -68,6 +75,7 @@ export default function Page() {
           alt="Ph.D member"
           scale={1}
           oy="45%"
+          border
         />
       </div>
 
@@ -76,7 +84,6 @@ export default function Page() {
       <div className="flex flex-wrap gap-12">
         {/* 필요 시 추가 */}
       </div>
-
       {/* Alumni */}
       <h2 className="text-xl font-semibold text-gray-800 mt-12 mb-4">Alumni</h2>
       <div className="flex flex-wrap items-start gap-12">
@@ -86,6 +93,7 @@ export default function Page() {
           alt="Alumni member"
           scale={1}
           oy="15%"
+          border          
         />
         <MemberCard
           name="김준영 (Junyoung Kim)"
@@ -93,6 +101,17 @@ export default function Page() {
           alt="Alumni member"
           scale={1}
           oy="50%"
+          border
+          
+        />
+        <MemberCard
+          name="황준우 (Junwoo Hwang)"
+          src="/images/almuni_Hwangjunwoo.jpeg"
+          alt="Alumni member"
+          scale={1}
+          oy="50%"
+          border
+          contain
         />
       </div>
     </section>

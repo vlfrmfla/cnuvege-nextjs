@@ -3,75 +3,92 @@ export const metadata = {
   description: "Classes",
 };
 
+type ClassInfo = {
+  name: string;
+  description: string;
+  credit: string;
+};
+
+function ClassCard({ name, description, credit }: ClassInfo) {
+  return (
+    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+      <h3 className="font-semibold text-gray-900 text-lg mb-2">{name}</h3>
+      <p className="text-gray-600 text-sm mb-3">{description}</p>
+      <span className="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
+        {credit}
+      </span>
+    </div>
+  );
+}
+
+function ClassSection({ title, classes }: { title: string; classes: ClassInfo[] }) {
+  return (
+    <div className="mb-10">
+      <h2 className="text-xl font-semibold text-gray-800 mb-4 border-l-4 border-green-500 pl-3">
+        {title}
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {classes.map((cls) => (
+          <ClassCard key={cls.name} {...cls} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const undergraduateClasses: ClassInfo[] = [
+  {
+    name: "채소원예학 및 실습",
+    description: "원예작물 중 채소의 중요성 및 전반적 내용에 대해 이해하고, 재배 실습을 수행",
+    credit: "전공필수(3-3-0)",
+  },
+  {
+    name: "토양과 비료의 이해",
+    description: "토양학 기초 및 시설재배 및 노지재배지의 관비 관리 방법",
+    credit: "전공필수(3-3-0)",
+  },
+  {
+    name: "원예작물영양학",
+    description: "식물 영양학 지식의 형성과 영양생리학에 대한 강의",
+    credit: "전공심화(3-3-0)",
+  },
+  {
+    name: "스마트온실모델링이론과개발실습",
+    description: "스마트온실 에너지 밸런스 균형 이론과 실제 개발 실습을 통한 온실 시스템 이해를 수행함. 바이브코딩을 통해서 최종적으로 조별과제를 통해 특정 서비스 구현을 목표로 함",
+    credit: "전공심화(4-3-0)",
+  },
+];
+
+const graduateClasses: ClassInfo[] = [
+  {
+    name: "채소학 최신과제",
+    description: "최근 5년간의 채소재배생리학 연구 동향과 과제",
+    credit: "대학원 수업(3-3-0)",
+  },
+  {
+    name: "채소원예학 특론",
+    description: "채소 재배 방법과 동향에 대한 이론적, 실용적 특론 강의",
+    credit: "대학원 수업(3-3-0)",
+  },
+  {
+    name: "원예작물영양학 특론",
+    description: "원예작물의 영양에 관한 심화 이론",
+    credit: "대학원 수업(3-3-0)",
+  },
+  {
+    name: "양액재배학 특론",
+    description: "수경재배 시스템 적용과 지하부 양수분 관리, 미생물 등 최신 연구 동향 분석",
+    credit: "대학원 수업(3-3-0)",
+  },
+];
+
 export default function Page() {
   return (
-    <section className="prose mx-auto bg-white ">
-      {/* ✅ 페이지 제목 */}
-      <h1 className="text-4xl font-bold text-gray-900 mb-6">Classes</h1>
+    <section className="prose prose-lg max-w-4xl mx-auto bg-white py-8">
+      <h1 className="text-3xl font-bold text-gray-900 mb-8">Classes</h1>
 
-      {/* ✅ 학부 수업 */}
-      <table className="min-w-full table-auto border-collapse table-fixed">
-        <thead>
-          <tr>
-            <th className="border-b px-4 py-2 text-left w-1/4">Category</th>
-            <th className="border-b-2 px-4 py-2 text-left w-1/4">Class</th>
-            <th className="border-b-2 px-4 py-2 text-left w-1/4">Description</th>
-            <th className="border-b-2 px-4 py-2 text-left w-1/4">Credit</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {/* 세로로 3개 셀 병합 */}
-            <td className="border-b px-4 py-2 font-semibold text-gray-800" rowSpan={3}>
-              Alumni
-            </td>
-            <td className="border-b px-4 py-2">채소원예학 및 실습</td>
-            <td className="border-b px-4 py-2">원예작물 중 채소의 중요성 및 전반적 내용에 대해 이해하고, 재배 실습을 수행</td>
-            <td className="border-b px-4 py-2">전공필수(3-3-0)</td>
-          </tr>
-          <tr>
-            <td className="border-b px-4 py-2">토양과 비료의 이해</td>
-            <td className="border-b px-4 py-2">토양학 기초 및 시설재배 및 노지재배지의 관비 관리 방법</td>
-            <td className="border-b px-4 py-2">전공필수(3-3-0)</td>
-          </tr>
-          <tr>
-            <td className="border-b px-4 py-2">원예작물영양학</td>
-            <td className="border-b px-4 py-2">식물 영양학 지식의 형성과 영양생리학에 대한 강의 </td>
-            <td className="border-b px-4 py-2">전공심화(3-3-0)</td>
-          </tr>
-
-        </tbody>
-      </table>
-
-      <table className="min-w-full table-auto border-collapse table-fixed">
-
-        <tbody>
-          <tr>
-            {/* 세로로 4개 셀 병합 */}
-            <td className="border-b px-4 py-2 font-semibold text-gray-800 text-left w-1/4" rowSpan={4}>
-              Graduated
-            </td>
-            <td className="border-b px-4 py-2 w-1/4">채소학 최신과제</td>
-            <td className="border-b px-4 py-2 w-1/4">최근 5년간의 채소학 연구 동향과 과제</td>
-            <td className="border-b px-4 py-2 w-1/4">대학원 수업(3-3-0)</td>
-          </tr>
-          <tr>
-            <td className="border-b px-4 py-2">채소원예학 특론</td>
-            <td className="border-b px-4 py-2">채소 재배 방법과 동향에 대한 이론적, 실용적 특론 강의</td>
-            <td className="border-b px-4 py-2">대학원 수업(3-3-0)</td>
-          </tr>
-          <tr>
-            <td className="border-b px-4 py-2">원예작물영양학 특론</td>
-            <td className="border-b px-4 py-2">원예작물의 영양에 관한 심화 이론</td>
-            <td className="border-b px-4 py-2">대학원 수업(3-3-0)</td>
-          </tr>
-          <tr>
-            <td className="border-b px-4 py-2">양액재배학 특론</td>
-            <td className="border-b px-4 py-2">수경재배 시스템 적용과 지하부 양수분 관리, 미생물 등 최신 연구 동향 분석</td>
-            <td className="border-b px-4 py-2">대학원 수업(3-3-0)</td>
-          </tr>
-        </tbody>
-      </table>
+      <ClassSection title="Undergraduate (학부)" classes={undergraduateClasses} />
+      <ClassSection title="Graduate (대학원)" classes={graduateClasses} />
     </section>
   );
 }
