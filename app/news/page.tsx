@@ -7,30 +7,52 @@ const notoSansKR = Noto_Sans_KR({
   variable: "--font-noto-sans-kr",
 });
 
-
-
-
 export const metadata = {
   title: 'news',
   description: 'Read Lab news.',
 }
 
+const newsItems = [
+  {
+    date: "2025.01",
+    title: "2025 스마트농업 AI 경진대회 본선 진출",
+    description: "연구원 배성한",
+  },
+];
+
 export default function Page() {
   return (
-    <section className={`prose ${notoSansKR.className}`}>
-      <h1>
-      연구분야
-      </h1>
-      {/* 연구분야 항목들 */}
-      <ul className="list-disc pl-6 mb-6 text-gray-800" >
-        <li>원예작물 안정생산을 위한 식물 생리 반응 최적화 연구</li>
-        <li>수경재배 지상부 및 지하부 관리 최적화 기술</li>
-        <li>시설원예 채소 생산 전과정평가 방법론 적용</li>
-        <li>LED 활용 식물 광 생리 반응 연구</li>
-      </ul>
+    <section className={`${notoSansKR.className}`}>
+      {/* News 섹션 */}
+      <div className="mb-10">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-green-800 pl-3">
+          News
+        </h1>
+        <div className="space-y-4">
+          {newsItems.map((item, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-4 p-4 bg-white border border-gray-200 rounded-lg"
+            >
+              <span className="text-sm text-gray-500 font-medium whitespace-nowrap">
+                {item.date}
+              </span>
+              <div>
+                <p className="text-gray-800 font-semibold">{item.title}</p>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <h1 className="">Publications (from 2024)</h1>
-      <BlogPosts />
+      {/* Publications 섹션 */}
+      <div>
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-green-800 pl-3">
+          Publications (from 2024)
+        </h1>
+        <BlogPosts />
+      </div>
     </section>
   )
 }

@@ -24,7 +24,7 @@ function ClassCard({ name, description, credit }: ClassInfo) {
 function ClassSection({ title, classes }: { title: string; classes: ClassInfo[] }) {
   return (
     <div className="mb-10">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4 border-l-4 border-green-500 pl-3">
+      <h2 className="text-xl font-semibold text-gray-800 mb-4 border-l-4 border-green-800 pl-3">
         {title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

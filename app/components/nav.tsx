@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'; // ✅ 현재 경로 감지
 
 const navItems = {
   '/pi': { name: 'Principle Investigator' },
+  '/research': { name: 'Research' },
   '/news': { name: 'News' },
   '/classes': { name: 'Classes' },
   '/team': { name: 'Team' },

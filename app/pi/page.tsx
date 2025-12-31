@@ -14,7 +14,7 @@ type TimelineItem = {
 function TimelineSection({ title, items }: { title: string; items: TimelineItem[] }) {
   return (
     <div className="mb-10">
-      <h2 className="text-xl font-semibold text-gray-800 mb-6 border-l-4 border-green-500 pl-3">
+      <h2 className="text-xl font-semibold text-gray-800 mb-6 border-l-4 border-green-800 pl-3">
         {title}
       </h2>
       <div className="space-y-4">
@@ -82,7 +82,7 @@ export default function PiPage() {
           <Image
             src="/images/pi2.jpeg"
             alt="Kim Dongpil"
-            width={220}
+            width={320}
             height={280}
             className="rounded-xl shadow-lg object-cover"
           />
