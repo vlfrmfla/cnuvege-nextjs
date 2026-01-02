@@ -14,7 +14,7 @@ export const metadata = {
 
 const newsItems = [
   {
-    date: "2025.01",
+    date: "2025.09",
     title: "2025 스마트농업 AI 경진대회 본선 진출",
     description: "연구원 배성한",
   },
@@ -39,7 +39,7 @@ export default function Page() {
               </span>
               <div>
                 <p className="text-gray-800 font-semibold">{item.title}</p>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+                <p className="text-gray-800 text-sm">{item.description}</p>
               </div>
             </div>
           ))}

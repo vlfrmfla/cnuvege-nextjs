@@ -99,7 +99,7 @@ export default function Page() {
           name="김준영 (Junyoung Kim)"
           src="/images/almuni_Kimjunyoung.jpg"
           alt="Alumni member"
-          scale={1}
+          scale={1.1}
           oy="50%"
           border
           
@@ -107,6 +107,16 @@ export default function Page() {
         <MemberCard
           name="황준우 (Junwoo Hwang)"
           src="/images/almuni_Hwangjunwoo.jpeg"
+          alt="Alumni member"
+          scale={1}
+          oy="50%"
+          border
+          contain
+        />
+
+        <MemberCard
+          name="심재민 (Jaemin Sim)"
+          src="/images/alnumi_Simjaemin.jpeg"
           alt="Alumni member"
           scale={1}
           oy="50%"
