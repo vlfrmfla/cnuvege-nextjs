@@ -37,7 +37,7 @@ const researchFields = [
 export default function Page() {
   return (
     <section className={`${notoSansKR.className}`}>
-      <h1 className="text-2xl font-bold text-gray-800 mb-6 pl-3 border-l-4 border-green-800">
+      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 pl-3 border-l-4 border-green-800 dark:border-green-500">
         Research Fields
       </h1>
 
@@ -45,11 +45,11 @@ export default function Page() {
         {researchFields.map((field, index) => (
           <div
             key={index}
-            className="p-5 bg-white border border-gray-200 rounded-lg hover:shadow-md hover:border-green-300 transition-all"
+            className="p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md hover:border-green-300 dark:hover:border-green-500 transition-all"
           >
-            <h2 className="font-semibold text-gray-900 mb-1">{field.title}</h2>
-            <p className="text-sm text-green-700 mb-2">{field.titleEn}</p>
-            <p className="text-sm text-gray-600">{field.description}</p>
+            <h2 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">{field.title}</h2>
+            <p className="text-sm text-green-700 dark:text-green-400 mb-2">{field.titleEn}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{field.description}</p>
           </div>
         ))}
       </div>

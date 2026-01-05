@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;
@@ -17,20 +20,16 @@
   --sh-entity: #e25a1c;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: white;
-    color: black;
-  }
-  :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
-  }
-  html {
-    color-scheme: light;
-  }
+/* Dark mode styles - controlled by .dark class */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark :root {
+  --sh-class: #4c97f8;
+  --sh-identifier: white;
+  --sh-keyword: #f47067;
+  --sh-string: #0fa295;
 }
 
 html {
@@ -95,19 +94,19 @@ html {
 }
 
 .prose p {
-  @apply my-4 text-neutral-800 text-neutral-200;
+  @apply my-4 text-neutral-800 dark:text-neutral-200;
 }
 
 .prose h1 {
-  @apply text-2xl font-semibold tracking-tight text-neutral-800 mt-2 mb-2;
+  @apply text-2xl font-semibold tracking-tight text-neutral-800 dark:text-neutral-100 mt-2 mb-2;
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-xl font-medium tracking-tight text-neutral-800 dark:text-neutral-100 mt-6 mb-2;
 }
 
 .prose h3 {
-  @apply text-neutral-700 font-medium tracking-tight mt-2 mb-2;
+  @apply text-neutral-700 dark:text-neutral-300 font-medium tracking-tight mt-2 mb-2;
 }
 
 .prose h4 {

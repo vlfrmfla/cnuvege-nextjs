@@ -18,22 +18,22 @@ export default function Page() {
       {/* Content Container */}
       <div className="max-w-4xl mx-auto px-4">
         {/* Lab Title */}
-        <div className="border-l-4 border-green-800 pl-4 py-2 mb-12">
-          <h1 className="text-2xl md:text-3xl font-bold text-green-800 mb-1 leading-tight">
+        <div className="border-l-4 border-green-800 dark:border-green-500 pl-4 py-2 mb-12">
+          <h1 className="text-2xl md:text-3xl font-bold text-green-800 dark:text-green-400 mb-1 leading-tight">
             충남대학교 채소원예학 실험실
           </h1>
-          <p className="text-sm md:text-base text-green-700">
+          <p className="text-sm md:text-base text-green-700 dark:text-green-500">
             Vegetable Horticulture Lab, Chungnam National University
           </p>
         </div>
 
         {/* Recruitment Notice */}
         <div className="flex items-start gap-4 mb-12">
-          <div className="w-1 bg-green-800 rounded-full self-stretch" />
+          <div className="w-1 bg-green-800 dark:bg-green-500 rounded-full self-stretch" />
           <div>
-            <p className="text-green-800 font-bold text-xl tracking-wide mb-2">NOTICE</p>
-            <p className="text-gray-800 font-semibold text-lg mb-1">2026년도 신규 연구원 모집</p>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-green-800 dark:text-green-400 font-bold text-xl tracking-wide mb-2">NOTICE</p>
+            <p className="text-gray-800 dark:text-gray-100 font-semibold text-lg mb-1">2026년도 신규 연구원 모집</p>
+            <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
               채소원예학 실험실과 함께할 대학원생 및 학부 인턴 연구원을 모집 중입니다.
               <br className="hidden md:block" />
               We are looking for graduate and undergraduate intern researchers for 2025.
@@ -51,7 +51,7 @@ export default function Page() {
 
         {/* News Section */}
         <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 mb-6 border-l-4 border-green-800 pl-3">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6 border-l-4 border-green-800 dark:border-green-500 pl-3">
             News
           </h2>
           <BlogPosts />
@@ -73,12 +73,12 @@ function QuickLinkCard({
   return (
     <a
       href={href}
-      className="block p-4 bg-white border border-gray-200 rounded-lg hover:shadow-md hover:border-green-300 transition-all group"
+      className="block p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md hover:border-green-300 dark:hover:border-green-500 transition-all group"
     >
-      <h3 className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
+      <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
         {title}
       </h3>
-      <p className="text-sm text-gray-500 mt-1">{description}</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{description}</p>
     </a>
   );
 }

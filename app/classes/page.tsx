@@ -11,10 +11,10 @@ type ClassInfo = {
 
 function ClassCard({ name, description, credit }: ClassInfo) {
   return (
-    <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-      <h3 className="font-semibold text-gray-900 text-lg mb-2">{name}</h3>
-      <p className="text-gray-600 text-sm mb-3">{description}</p>
-      <span className="inline-block bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">
+    <div className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-4 hover:shadow-md transition-shadow">
+      <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-lg mb-2">{name}</h3>
+      <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{description}</p>
+      <span className="inline-block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
         {credit}
       </span>
     </div>
@@ -24,7 +24,7 @@ function ClassCard({ name, description, credit }: ClassInfo) {
 function ClassSection({ title, classes }: { title: string; classes: ClassInfo[] }) {
   return (
     <div className="mb-10">
-      <h2 className="text-xl font-semibold text-gray-800 mb-4 border-l-4 border-green-800 pl-3">
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 border-l-4 border-green-800 dark:border-green-500 pl-3">
         {title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -84,8 +84,8 @@ const graduateClasses: ClassInfo[] = [
 
 export default function Page() {
   return (
-    <section className="prose prose-lg max-w-4xl mx-auto bg-white py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Classes</h1>
+    <section className="prose prose-lg max-w-4xl mx-auto py-8">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8">Classes</h1>
 
       <ClassSection title="Undergraduate (학부)" classes={undergraduateClasses} />
       <ClassSection title="Graduate (대학원)" classes={graduateClasses} />

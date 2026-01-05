@@ -14,19 +14,19 @@ type TimelineItem = {
 function TimelineSection({ title, items }: { title: string; items: TimelineItem[] }) {
   return (
     <div className="mb-10">
-      <h2 className="text-xl font-semibold text-gray-800 mb-6 border-l-4 border-green-800 pl-3">
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6 border-l-4 border-green-800 dark:border-green-500 pl-3">
         {title}
       </h2>
       <div className="space-y-4">
         {items.map((item, idx) => (
           <div key={idx} className="flex gap-4">
-            <div className="w-36 flex-shrink-0 text-sm text-gray-500 font-medium pt-0.5">
+            <div className="w-36 flex-shrink-0 text-sm text-gray-500 dark:text-gray-400 font-medium pt-0.5">
               {item.period}
             </div>
-            <div className="flex-1 border-l-2 border-gray-200 pl-4 pb-4">
-              <p className="text-gray-800 font-medium">{item.title}</p>
+            <div className="flex-1 border-l-2 border-gray-200 dark:border-gray-700 pl-4 pb-4">
+              <p className="text-gray-800 dark:text-gray-100 font-medium">{item.title}</p>
               {item.organization && (
-                <p className="text-gray-500 text-sm">{item.organization}</p>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">{item.organization}</p>
               )}
             </div>
           </div>
@@ -90,31 +90,31 @@ export default function PiPage() {
 
         {/* Profile Info */}
         <div className="flex-1 text-center md:text-left">
-          <h1 className="text-3xl font-bold text-gray-900 mb-1">Kim Dongpil</h1>
-          <p className="text-xl text-gray-500 mb-4">김동필</p>
-          <p className="text-gray-600 mb-6">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1">Kim Dongpil</h1>
+          <p className="text-xl text-gray-500 dark:text-gray-400 mb-4">김동필</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             Assistant Professor, Department of Horticulture
             <br />
-            <span className="text-green-600 font-medium">Chungnam National University</span>
+            <span className="text-green-600 dark:text-green-400 font-medium">Chungnam National University</span>
           </p>
 
           {/* Contact Info */}
           <div className="space-y-2 text-sm">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 dark:text-gray-300">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <a href="mailto:kimdongpil@cnu.ac.kr" className="text-blue-600 hover:underline">
+              <a href="mailto:kimdongpil@cnu.ac.kr" className="text-blue-600 dark:text-blue-400 hover:underline">
                 kimdongpil@cnu.ac.kr
               </a>
             </div>
-            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 dark:text-gray-300">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <span>042-821-5736</span>
             </div>
-            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-gray-600 dark:text-gray-300">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 14l9-5-9-5-9 5 9 5z" />
                 <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -124,7 +124,7 @@ export default function PiPage() {
                 href="https://scholar.google.com/citations?user=2BFSceEAAAAJ&hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
               >
                 Google Scholar
               </a>

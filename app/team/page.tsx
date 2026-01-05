@@ -24,7 +24,7 @@ function MemberCard({
   return (
     <div className="not-prose flex flex-col items-center gap-3">
       {/* 원 프레임 */}
-      <div className={`size-40 md:size-44 rounded-full overflow-hidden relative bg-white ${border ? "border border-gray-300" : ""}`}>
+      <div className={`size-40 md:size-44 rounded-full overflow-hidden relative bg-white dark:bg-gray-700 ${border ? "border border-gray-300 dark:border-gray-600" : ""}`}>
         <img
           src={src}
           alt={alt}
@@ -32,7 +32,7 @@ function MemberCard({
           style={{ transform: `scale(${scale})`, objectPosition: `50% ${oy}` }}
         />
       </div>
-      <figcaption className="text-base font-medium text-gray-800 tracking-tight text-center">
+      <figcaption className="text-base font-medium text-gray-800 dark:text-gray-100 tracking-tight text-center">
         {name}
       </figcaption>
     </div>
@@ -41,17 +41,17 @@ function MemberCard({
 
 export default function Page() {
   return (
-    <section className="prose mx-auto bg-white py-8">
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Team members</h1>
+    <section className="prose mx-auto py-8">
+      <h1 className="font-semibold text-2xl mb-8 tracking-tighter dark:text-gray-100">Team members</h1>
 
       {/* Full time researcher */}
-      <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Full time researcher</h2>
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4">Full time researcher</h2>
       <div className="flex flex-wrap gap-10">
         <MemberCard
           name="배성한 (Sunghan Bae)"
           src="/images/alumni1_baesunghan.jpeg"
           alt="Full time researcher"
-          scale={1.2}    // 증명사진은 살짝만 축소
+          scale={1.3}    // 증명사진은 살짝만 축소
           oy="50%"
           border
           contain
@@ -59,7 +59,7 @@ export default function Page() {
       </div>
 
       {/* Ph.D Course 섹션 */}
-      <h2 className="text-xl font-semibold text-gray-800 mt-20 mb-4">Ph.D Course</h2>
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-20 mb-4">Ph.D Course</h2>
       <div className="flex flex-wrap items-start gap-12">
         <MemberCard
           name="다디 (Dadi)"
@@ -80,12 +80,12 @@ export default function Page() {
       </div>
 
       {/* Master's Course */}
-      <h2 className="text-xl font-semibold text-gray-800 mt-12 mb-4">Master's Course</h2>
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-4">Master's Course</h2>
       <div className="flex flex-wrap gap-12">
         {/* 필요 시 추가 */}
       </div>
       {/* Alumni */}
-      <h2 className="text-xl font-semibold text-gray-800 mt-12 mb-4">Alumni</h2>
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-4">Alumni</h2>
       <div className="flex flex-wrap items-start gap-12">
         <MemberCard
           name="백상훈 (Sanghoon Baek)"
@@ -108,7 +108,7 @@ export default function Page() {
           name="황준우 (Junwoo Hwang)"
           src="/images/almuni_Hwangjunwoo.jpeg"
           alt="Alumni member"
-          scale={1}
+          scale={1.27}
           oy="50%"
           border
           contain
@@ -118,7 +118,7 @@ export default function Page() {
           name="심재민 (Jaemin Sim)"
           src="/images/alnumi_Simjaemin.jpeg"
           alt="Alumni member"
-          scale={1}
+          scale={1.27}
           oy="50%"
           border
           contain

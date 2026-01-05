@@ -25,21 +25,21 @@ export default function Page() {
     <section className={`${notoSansKR.className}`}>
       {/* News 섹션 */}
       <div className="mb-10">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-green-800 pl-3">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 border-l-4 border-green-800 dark:border-green-500 pl-3">
           News
         </h1>
         <div className="space-y-4">
           {newsItems.map((item, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-4 bg-white border border-gray-200 rounded-lg"
+              className="flex items-start gap-4 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg"
             >
-              <span className="text-sm text-gray-500 font-medium whitespace-nowrap">
+              <span className="text-sm text-gray-500 dark:text-gray-400 font-medium whitespace-nowrap">
                 {item.date}
               </span>
               <div>
-                <p className="text-gray-800 font-semibold">{item.title}</p>
-                <p className="text-gray-800 text-sm">{item.description}</p>
+                <p className="text-gray-800 dark:text-gray-100 font-semibold">{item.title}</p>
+                <p className="text-gray-800 dark:text-gray-300 text-sm">{item.description}</p>
               </div>
             </div>
           ))}
@@ -48,7 +48,7 @@ export default function Page() {
 
       {/* Publications 섹션 */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-green-800 pl-3">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 border-l-4 border-green-800 dark:border-green-500 pl-3">
           Publications (from 2024)
         </h1>
         <BlogPosts />
