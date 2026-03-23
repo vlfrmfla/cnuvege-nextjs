@@ -1,33 +1,73 @@
 "use client";
 
-import { useEffect } from "react";
+import { createContext, useContext, useEffect, useState, useCallback, useRef } from "react";
 
-function getTimeBasedTheme(): "light" | "dark" {
+type Theme = "light" | "dark";
+
+interface ThemeContextType {
+  theme: Theme;
+  toggleTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType>({
+  theme: "light",
+  toggleTheme: () => {},
+});
+
+export function useTheme() {
+  return useContext(ThemeContext);
+}
+
+function getTimeBasedTheme(): Theme {
   const hour = new Date().getHours();
-  // 6pm (18:00) ~ 6am (06:00) = dark mode
   return hour >= 18 || hour < 6 ? "dark" : "light";
 }
 
-function applyTheme(theme: "light" | "dark") {
-  if (theme === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
+function applyTheme(theme: Theme) {
+  document.documentElement.classList.toggle("dark", theme === "dark");
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    // 초기 테마 설정
-    applyTheme(getTimeBasedTheme());
+  const [theme, setTheme] = useState<Theme>("light");
+  const isManualRef = useRef(false);
 
-    // 매 분마다 시간 체크 (자동 전환용)
+  // 초기 테마 설정
+  useEffect(() => {
+    const saved = localStorage.getItem("theme-manual");
+    if (saved === "light" || saved === "dark") {
+      isManualRef.current = true;
+      setTheme(saved);
+      applyTheme(saved);
+    } else {
+      const timeTheme = getTimeBasedTheme();
+      setTheme(timeTheme);
+      applyTheme(timeTheme);
+    }
+
+    // 매 분마다 시간 체크 (수동 설정이 아닐 때만 적용)
     const interval = setInterval(() => {
-      applyTheme(getTimeBasedTheme());
-    }, 60000); // 1분마다 체크
+      if (isManualRef.current) return;
+      const timeTheme = getTimeBasedTheme();
+      setTheme(timeTheme);
+      applyTheme(timeTheme);
+    }, 60000);
 
     return () => clearInterval(interval);
   }, []);
 
-  return <>{children}</>;
+  const toggleTheme = useCallback(() => {
+    setTheme((prev) => {
+      const next: Theme = prev === "dark" ? "light" : "dark";
+      isManualRef.current = true;
+      applyTheme(next);
+      localStorage.setItem("theme-manual", next);
+      return next;
+    });
+  }, []);
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 }

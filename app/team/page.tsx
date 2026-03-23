@@ -44,22 +44,8 @@ export default function Page() {
     <section className="prose mx-auto py-8">
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter dark:text-gray-100">Team members</h1>
 
-      {/* Full time researcher */}
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4">Full time researcher</h2>
-      <div className="flex flex-wrap gap-10">
-        <MemberCard
-          name="배성한 (Sunghan Bae)"
-          src="/images/alumni1_baesunghan.jpeg"
-          alt="Full time researcher"
-          scale={1.3}    // 증명사진은 살짝만 축소
-          oy="50%"
-          border
-          contain
-        />
-      </div>
-
       {/* Ph.D Course 섹션 */}
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-20 mb-4">Ph.D Course</h2>
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4">Ph.D Course</h2>
       <div className="flex flex-wrap items-start gap-12">
         <MemberCard
           name="다디 (Dadi)"
@@ -82,7 +68,15 @@ export default function Page() {
       {/* Master's Course */}
       <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-4">Master's Course</h2>
       <div className="flex flex-wrap gap-12">
-        {/* 필요 시 추가 */}
+        <MemberCard
+          name="배성한 (Sunghan Bae)"
+          src="/images/alumni1_baesunghan.jpeg"
+          alt="Master's Course member"
+          scale={1.3}
+          oy="50%"
+          border
+          contain
+        />
       </div>
       {/* Alumni */}
       <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-4">Alumni</h2>

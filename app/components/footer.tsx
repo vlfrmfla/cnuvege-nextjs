@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 function ArrowIcon() {
   return (
     <svg
@@ -31,9 +33,18 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-500">
-        © {new Date().getFullYear()} MIT Licensed
-      </p>
+      <div className="mt-8 flex items-center gap-3">
+        <Image
+          src="/lablogo.png"
+          alt="VHS Lab Logo"
+          width={100}
+          height={40}
+          className="dark:invert"
+        />
+        <p className="text-neutral-600 dark:text-neutral-500">
+          © {new Date().getFullYear()} MIT Licensed
+        </p>
+      </div>
       <p className="mt-2 text-neutral-600 dark:text-neutral-500">
         Contact: 042-821-5736 <span className="mx-2">|</span> Mail: kimdongpil@cnu.ac.kr
       </p>

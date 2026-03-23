@@ -10,6 +10,8 @@ export default function Page() {
           src="/images/greenhouse.jpeg"
           alt="Greenhouse"
           fill
+          sizes="100vw"
+          quality={90}
           className="object-cover"
           priority
         />
