@@ -59,14 +59,16 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="subpixel-antialiased mx-auto px-4 sm:px-6 mt-8 transition-colors duration-300">
+      <body className="subpixel-antialiased transition-colors duration-300">
         <ThemeProvider>
-          <main className="mx-auto min-w-0 mt-6 flex flex-col px-4 md:px-8 max-w-full md:max-w-[88%]">
+          <main className="mx-auto min-w-0 flex flex-col w-full">
             <Navbar />
-            <div className="pt-[80px]">
+            <div className="pt-[80px] mt-8 px-4 sm:px-6 md:px-8">
               {children}
             </div>
-            <Footer />
+            <div className="px-4 sm:px-6 md:px-8">
+              <Footer />
+            </div>
             <Analytics />
             <SpeedInsights />
           </main>

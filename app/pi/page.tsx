@@ -74,7 +74,7 @@ const experience: TimelineItem[] = [
 
 export default function PiPage() {
   return (
-    <section className="max-w-4xl mx-auto py-8 px-4">
+    <section className="max-w-4xl mx-auto py-8">
       {/* Profile Header */}
       <div className="flex flex-col md:flex-row gap-8 mb-12 items-center md:items-start">
         {/* Profile Image */}

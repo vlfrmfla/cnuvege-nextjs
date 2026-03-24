@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <section>
       {/* Hero Section - Full Width */}
-      <div className="relative w-screen left-1/2 -translate-x-1/2 h-[250px] md:h-[300px] overflow-hidden mb-12">
+      <div className="relative -mx-4 sm:-mx-6 md:-mx-8 h-[250px] md:h-[300px] overflow-hidden mb-12">
         <Image
           src="/images/greenhouse.jpeg"
           alt="Greenhouse"
