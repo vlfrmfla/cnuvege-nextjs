@@ -80,10 +80,10 @@ export default function PiPage() {
         {/* Profile Image */}
         <div className="flex-shrink-0">
           <Image
-            src="/images/pi2.jpeg"
+            src="/images/pi_profile.jpg"
             alt="Kim Dongpil"
-            width={320}
-            height={280}
+            width={200}
+            height={260}
             className="rounded-xl shadow-lg object-cover"
           />
         </div>

@@ -38,7 +38,7 @@ export default function Page() {
             <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
               채소원예학 실험실과 함께할 대학원생 및 학부 인턴 연구원을 모집 중입니다.
               <br className="hidden md:block" />
-              We are looking for graduate and undergraduate intern researchers for 2025.
+              We are looking for graduate and undergraduate intern researchers for 2026.
             </p>
           </div>
         </div>
