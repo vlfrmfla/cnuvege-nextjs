@@ -13,6 +13,7 @@ const navItems = {
   '/classes': { name: 'Classes' },
   '/team': { name: 'Team' },
   '/gallery': { name: 'Gallery' },
+  '/apps': { name: 'Apps Portal' },
 };
 
 function ThemeToggleButton() {
