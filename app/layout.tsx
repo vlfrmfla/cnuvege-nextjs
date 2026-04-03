@@ -54,16 +54,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-gray-900',
+        'text-black bg-white dark:text-white dark:bg-neutral-900',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body className="subpixel-antialiased transition-colors duration-300">
+      <body className="subpixel-antialiased transition-colors duration-300" style={{ fontFamily: '"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif' }}>
         <ThemeProvider>
           <main className="mx-auto min-w-0 flex flex-col w-full">
             <Navbar />
-            <div className="pt-[80px] mt-8 px-4 sm:px-6 md:px-8">
+            <div className="pt-[56px] px-4 sm:px-6 md:px-8">
               {children}
             </div>
             <div className="px-4 sm:px-6 md:px-8">

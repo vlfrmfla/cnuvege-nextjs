@@ -1,10 +1,4 @@
-import { Noto_Sans_KR } from "next/font/google";
 
-const notoSansKR = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-noto-sans-kr",
-});
 
 export const metadata = {
   title: "Apps Portal",
@@ -30,7 +24,7 @@ const apps = [
 
 export default function Page() {
   return (
-    <section className={`${notoSansKR.className}`}>
+    <section className="pt-6">
       <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
         Apps Portal
       </h1>
@@ -45,9 +39,9 @@ export default function Page() {
             href={app.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 overflow-hidden hover:shadow-xl hover:border-green-400 dark:hover:border-green-500 transition-all duration-300"
+            className="group block rounded-xl border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 overflow-hidden hover:shadow-xl hover:border-olive-300 dark:hover:border-olive-400 transition-all duration-300"
           >
-            <div className="bg-green-700 dark:bg-green-800 px-6 py-4 flex items-center justify-between">
+            <div className="bg-olive-600 dark:bg-olive-700 px-6 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
                   <svg
@@ -68,7 +62,7 @@ export default function Page() {
                 </div>
                 <div>
                   <h2 className="font-bold text-white text-lg">{app.title}</h2>
-                  <p className="text-green-200 text-xs">{app.titleEn}</p>
+                  <p className="text-olive-200 text-xs">{app.titleEn}</p>
                 </div>
               </div>
               <svg
@@ -110,7 +104,7 @@ export default function Page() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-green-600 dark:text-green-400 shrink-0"
+                      className="text-olive-500 dark:text-olive-300 shrink-0"
                     >
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
@@ -123,7 +117,7 @@ export default function Page() {
                 {app.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 text-xs bg-green-50 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded-full"
+                    className="px-2.5 py-1 text-xs bg-olive-50 dark:bg-olive-800/40 text-olive-500 dark:text-olive-300 rounded-full"
                   >
                     {tag}
                   </span>
@@ -134,7 +128,7 @@ export default function Page() {
         ))}
       </div>
 
-      <div className="mt-12 p-5 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-lg">
+      <div className="mt-12 p-5 bg-gray-50 dark:bg-neutral-800/50 border border-gray-200 dark:border-neutral-700 rounded-lg">
         <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
           이용 안내
         </h3>

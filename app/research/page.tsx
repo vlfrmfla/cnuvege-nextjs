@@ -1,10 +1,4 @@
-import { Noto_Sans_KR } from "next/font/google";
 
-const notoSansKR = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-noto-sans-kr",
-});
 
 export const metadata = {
   title: "Research",
@@ -63,8 +57,8 @@ const grants = [
 
 export default function Page() {
   return (
-    <section className={`${notoSansKR.className}`}>
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 pl-3 border-l-4 border-green-800 dark:border-green-500">
+    <section className="pt-6">
+      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 ">
         Research Fields
       </h1>
 
@@ -72,16 +66,16 @@ export default function Page() {
         {researchFields.map((field, index) => (
           <div
             key={index}
-            className="p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md hover:border-green-300 dark:hover:border-green-500 transition-all"
+            className="p-5 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-lg hover:shadow-md hover:border-olive-300 dark:hover:border-olive-400 transition-all"
           >
             <h2 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">{field.title}</h2>
-            <p className="text-sm text-green-700 dark:text-green-400 mb-2">{field.titleEn}</p>
+            <p className="text-sm text-olive-500 dark:text-olive-300 mb-2">{field.titleEn}</p>
             <p className="text-sm text-gray-600 dark:text-gray-300">{field.description}</p>
           </div>
         ))}
       </div>
 
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 pl-3 border-l-4 border-green-800 dark:border-green-500 mt-16">
+      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6  mt-16">
         Grants
       </h1>
 
@@ -89,17 +83,17 @@ export default function Page() {
         {grants.map((grant, index) => (
           <div
             key={index}
-            className="p-5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md hover:border-green-300 dark:hover:border-green-500 transition-all"
+            className="p-5 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-lg hover:shadow-md hover:border-olive-300 dark:hover:border-olive-400 transition-all"
           >
             <h2 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{grant.title}</h2>
             <div className="flex flex-wrap gap-2 text-sm">
-              <span className="px-2 py-0.5 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-300 rounded">
+              <span className="px-2 py-0.5 bg-olive-100 dark:bg-olive-800 text-olive-600 dark:text-olive-300 rounded">
                 {grant.agency}
               </span>
-              <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">
+              <span className="px-2 py-0.5 bg-gray-100 dark:bg-neutral-700 text-gray-700 dark:text-gray-300 rounded">
                 {grant.role}
               </span>
-              <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded">
+              <span className="px-2 py-0.5 bg-gray-100 dark:bg-neutral-700 text-gray-700 dark:text-gray-300 rounded">
                 {grant.period}
               </span>
             </div>

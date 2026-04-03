@@ -11,10 +11,10 @@ type ClassInfo = {
 
 function ClassCard({ name, description, credit }: ClassInfo) {
   return (
-    <div className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-4 hover:shadow-md transition-shadow">
+    <div className="border border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 rounded-lg p-4 hover:shadow-md transition-shadow">
       <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-lg mb-2">{name}</h3>
       <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{description}</p>
-      <span className="inline-block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
+      <span className="inline-block bg-gray-100 dark:bg-neutral-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded">
         {credit}
       </span>
     </div>
@@ -24,7 +24,7 @@ function ClassCard({ name, description, credit }: ClassInfo) {
 function ClassSection({ title, classes }: { title: string; classes: ClassInfo[] }) {
   return (
     <div className="mb-10">
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 border-l-4 border-green-800 dark:border-green-500 pl-3">
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4 ">
         {title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

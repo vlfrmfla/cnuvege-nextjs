@@ -24,7 +24,7 @@ function MemberCard({
   return (
     <div className="not-prose flex flex-col items-center gap-3">
       {/* 원 프레임 */}
-      <div className={`size-40 md:size-44 rounded-full overflow-hidden relative bg-white dark:bg-gray-700 ${border ? "border border-gray-300 dark:border-gray-600" : ""}`}>
+      <div className={`size-40 md:size-44 rounded-full overflow-hidden relative bg-white dark:bg-neutral-700 ${border ? "border border-gray-300 dark:border-gray-600" : ""}`}>
         <img
           src={src}
           alt={alt}

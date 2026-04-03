@@ -14,7 +14,7 @@ type TimelineItem = {
 function TimelineSection({ title, items }: { title: string; items: TimelineItem[] }) {
   return (
     <div className="mb-10">
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6 border-l-4 border-green-800 dark:border-green-500 pl-3">
+      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6 ">
         {title}
       </h2>
       <div className="space-y-4">
@@ -95,7 +95,7 @@ export default function PiPage() {
           <p className="text-gray-600 dark:text-gray-300 mb-6">
             Assistant Professor, Department of Horticulture
             <br />
-            <span className="text-green-600 dark:text-green-400 font-medium">Chungnam National University</span>
+            <span className="text-olive-500 dark:text-olive-300 font-medium">Chungnam National University</span>
           </p>
 
           {/* Contact Info */}

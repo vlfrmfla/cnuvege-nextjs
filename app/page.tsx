@@ -1,11 +1,12 @@
 import { BlogPosts } from "app/components/posts";
+import { NoticeBanner } from "app/components/notice-banner";
 import Image from "next/image";
 
 export default function Page() {
   return (
     <section>
-      {/* Hero Section - Full Width */}
-      <div className="relative -mx-4 sm:-mx-6 md:-mx-8 h-[250px] md:h-[300px] overflow-hidden mb-12">
+      {/* Hero Section - Full Width with text overlay */}
+      <div className="relative -mx-4 sm:-mx-6 md:-mx-8 h-[300px] md:h-[380px] overflow-hidden mb-0">
         <Image
           src="/images/greenhouse.jpeg"
           alt="Greenhouse"
@@ -15,34 +16,29 @@ export default function Page() {
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-end p-8 md:p-14">
+          <div>
+            <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-2">
+              Welcome to{" "}
+              <span className="text-olive-300">
+                Vegetable Horticulture Lab
+              </span>
+            </h1>
+            <p className="text-base md:text-lg text-white/80 font-medium">
+              Chungnam National University
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Notice Banner - Full Width */}
+      <div className="-mx-4 sm:-mx-6 md:-mx-8 mb-12">
+        <NoticeBanner />
       </div>
 
       {/* Content Container */}
       <div className="max-w-4xl mx-auto px-4">
-        {/* Lab Title */}
-        <div className="border-l-4 border-green-800 dark:border-green-500 pl-4 py-2 mb-12">
-          <h1 className="text-2xl md:text-3xl font-bold text-green-800 dark:text-green-400 mb-1 leading-tight">
-            충남대학교 채소원예학 실험실
-          </h1>
-          <p className="text-sm md:text-base text-green-700 dark:text-green-500">
-            Vegetable Horticulture Lab, Chungnam National University
-          </p>
-        </div>
-
-        {/* Recruitment Notice */}
-        <div className="flex items-start gap-4 mb-12">
-          <div className="w-1 bg-green-800 dark:bg-green-500 rounded-full self-stretch" />
-          <div>
-            <p className="text-green-800 dark:text-green-400 font-bold text-xl tracking-wide mb-2">NOTICE</p>
-            <p className="text-gray-800 dark:text-gray-100 font-semibold text-lg mb-1">2026년도 신규 연구원 모집</p>
-            <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
-              채소원예학 실험실과 함께할 대학원생 및 학부 인턴 연구원을 모집 중입니다.
-              <br className="hidden md:block" />
-              We are looking for graduate and undergraduate intern researchers for 2026.
-            </p>
-          </div>
-        </div>
-
         {/* Quick Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <QuickLinkCard href="/pi" title="PI" description="지도교수 소개" />
@@ -53,7 +49,7 @@ export default function Page() {
 
         {/* News Section */}
         <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6 border-l-4 border-green-800 dark:border-green-500 pl-3">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
             News
           </h2>
           <BlogPosts />
@@ -75,9 +71,9 @@ function QuickLinkCard({
   return (
     <a
       href={href}
-      className="block p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:shadow-md hover:border-green-300 dark:hover:border-green-500 transition-all group"
+      className="block p-4 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 rounded-lg hover:shadow-md hover:border-olive-300 dark:hover:border-olive-400 transition-all group"
     >
-      <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+      <h3 className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-olive-500 dark:group-hover:text-olive-300 transition-colors">
         {title}
       </h3>
       <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{description}</p>
