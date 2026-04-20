@@ -13,10 +13,11 @@ type TimelineItem = {
 
 function TimelineSection({ title, items }: { title: string; items: TimelineItem[] }) {
   return (
-    <div className="mb-10">
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6 ">
-        {title}
-      </h2>
+    <div className="mb-12">
+      <div className="flex items-center gap-3 mb-6">
+        <h2 className="section-heading text-lg md:text-xl">{title}</h2>
+        <div className="h-px flex-1 bg-gradient-to-r from-olive-300/60 via-olive-300/20 to-transparent dark:from-olive-400/40" />
+      </div>
       <div className="space-y-4">
         {items.map((item, idx) => (
           <div key={idx} className="flex gap-4">

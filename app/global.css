@@ -30,6 +30,44 @@
   animation-play-state: paused;
 }
 
+/* Subtle animated heading — olive + slate gradient in sync with site palette */
+@keyframes heading-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.section-heading {
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-olive-600),
+    var(--color-olive-400),
+    var(--color-slate-blue),
+    var(--color-olive-500),
+    var(--color-olive-600)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: heading-shimmer 12s linear infinite;
+}
+html.dark .section-heading {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-olive-300),
+    var(--color-olive-200),
+    var(--color-slate-blue),
+    var(--color-olive-300)
+  );
+  background-size: 200% 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-heading { animation: none; }
+}
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;

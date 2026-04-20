@@ -1,5 +1,6 @@
 import { BlogPosts } from "app/components/posts";
 import { NoticeBanner } from "app/components/notice-banner";
+import { WeeklyPaper } from "app/components/weekly-paper";
 import Image from "next/image";
 
 export default function Page() {
@@ -43,16 +44,26 @@ export default function Page() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           <QuickLinkCard href="/pi" title="PI" description="지도교수 소개" />
           <QuickLinkCard href="/team" title="Team" description="연구실 구성원" />
-          <QuickLinkCard href="/classes" title="Classes" description="강의 목록" />
+          <QuickLinkCard href="/weekly-paper" title="Weekly Paper" description="Journal Club" />
           <QuickLinkCard href="/research" title="Research" description="연구 내용" />
         </div>
 
         {/* News Section */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">
-            News
-          </h2>
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <h2 className="section-heading text-lg md:text-xl">NEWS</h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-olive-300/60 via-olive-300/20 to-transparent dark:from-olive-400/40" />
+          </div>
           <BlogPosts />
+        </div>
+
+        {/* VEGE Journal Club Section */}
+        <div className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <h2 className="section-heading text-lg md:text-xl">VEGE Journal Club</h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-olive-300/60 via-olive-300/20 to-transparent dark:from-olive-400/40" />
+          </div>
+          <WeeklyPaper />
         </div>
       </div>
     </section>

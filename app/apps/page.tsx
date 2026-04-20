@@ -24,13 +24,18 @@ const apps = [
 
 export default function Page() {
   return (
-    <section className="pt-6">
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
+    <section className="max-w-5xl mx-auto pt-6 pb-16">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">
         Apps Portal
       </h1>
       <p className="text-sm text-gray-500 dark:text-gray-400 mb-10">
         충남대학교 채소원예학 연구실에서 개발한 애플리케이션 모음
       </p>
+
+      <div className="flex items-center gap-3 mb-6">
+        <h2 className="section-heading text-lg md:text-xl">Applications</h2>
+        <div className="h-px flex-1 bg-gradient-to-r from-olive-300/60 via-olive-300/20 to-transparent dark:from-olive-400/40" />
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {apps.map((app, index) => (
@@ -128,10 +133,11 @@ export default function Page() {
         ))}
       </div>
 
-      <div className="mt-12 p-5 bg-gray-50 dark:bg-neutral-800/50 border border-gray-200 dark:border-neutral-700 rounded-lg">
-        <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
-          이용 안내
-        </h3>
+      <div className="flex items-center gap-3 mt-14 mb-6">
+        <h2 className="section-heading text-lg md:text-xl">이용 안내</h2>
+        <div className="h-px flex-1 bg-gradient-to-r from-olive-300/60 via-olive-300/20 to-transparent dark:from-olive-400/40" />
+      </div>
+      <div className="p-5 bg-gray-50 dark:bg-neutral-800/50 border border-gray-200 dark:border-neutral-700 rounded-lg">
         <div className="space-y-2 text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
           <p>
             본 애플리케이션은 카카오(Kakao) 또는 구글(Google) 계정을 통한 OAuth

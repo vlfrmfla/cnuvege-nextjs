@@ -10,7 +10,7 @@ const navItems = {
   '/pi': { name: 'PI' },
   '/research': { name: 'Research' },
   '/news': { name: 'News' },
-  '/classes': { name: 'Classes' },
+  '/weekly-paper': { name: 'Weekly Paper' },
   '/team': { name: 'Team' },
   '/gallery': { name: 'Gallery' },
   '/apps': { name: 'Apps' },

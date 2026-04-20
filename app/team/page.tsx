@@ -39,13 +39,24 @@ function MemberCard({
   );
 }
 
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3 mb-6">
+      <h2 className="section-heading text-lg md:text-xl">{children}</h2>
+      <div className="h-px flex-1 bg-gradient-to-r from-olive-300/60 via-olive-300/20 to-transparent dark:from-olive-400/40" />
+    </div>
+  );
+}
+
 export default function Page() {
   return (
-    <section className="prose mx-auto py-8">
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter dark:text-gray-100">Team members</h1>
+    <section className="max-w-4xl mx-auto pt-6 pb-16">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-10">
+        Team Members
+      </h1>
 
       {/* Ph.D Course 섹션 */}
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4">Ph.D Course</h2>
+      <SectionHeading>Ph.D Course</SectionHeading>
       <div className="flex flex-wrap items-start gap-12">
         <MemberCard
           name="다디 (Dadi)"
@@ -66,7 +77,9 @@ export default function Page() {
       </div>
 
       {/* Master's Course */}
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-4">Master's Course</h2>
+      <div className="mt-12">
+        <SectionHeading>Master&apos;s Course</SectionHeading>
+      </div>
       <div className="flex flex-wrap gap-12">
         <MemberCard
           name="배성한 (Sunghan Bae)"
@@ -79,7 +92,9 @@ export default function Page() {
         />
       </div>
       {/* Alumni */}
-      <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-12 mb-4">Alumni</h2>
+      <div className="mt-12">
+        <SectionHeading>Alumni</SectionHeading>
+      </div>
       <div className="flex flex-wrap items-start gap-12">
         <MemberCard
           name="백상훈 (Sanghoon Baek)"

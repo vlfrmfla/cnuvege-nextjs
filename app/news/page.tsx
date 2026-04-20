@@ -14,14 +14,24 @@ const newsItems = [
   },
 ];
 
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3 mb-6">
+      <h2 className="section-heading text-lg md:text-xl">{children}</h2>
+      <div className="h-px flex-1 bg-gradient-to-r from-olive-300/60 via-olive-300/20 to-transparent dark:from-olive-400/40" />
+    </div>
+  );
+}
+
 export default function Page() {
   return (
-    <section className="pt-6">
-      {/* News 섹션 */}
-      <div className="mb-10">
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 ">
-          News
-        </h1>
+    <section className="max-w-4xl mx-auto pt-6 pb-16">
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-10">
+        News
+      </h1>
+
+      <div className="mb-14">
+        <SectionHeading>Updates</SectionHeading>
         <div className="space-y-4">
           {newsItems.map((item, index) => (
             <div
@@ -40,11 +50,8 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Publications 섹션 */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 ">
-          Publications (from 2024)
-        </h1>
+        <SectionHeading>Publications (from 2024)</SectionHeading>
         <BlogPosts />
       </div>
     </section>
