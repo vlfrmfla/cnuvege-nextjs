@@ -85,26 +85,18 @@ const grants = [
     title:
       "고랭지 여름배추 생산성 향상을 위한 인공지능기술 기반 스마트 최적시비관리 시스템 개발 및 현장 적용",
     agency: "농촌진흥청",
-    role: "주관책임",
-    period: "2026–2030",
   },
   {
     title: "AI 기반 작물 생육지표 계측 및 생체센서 연계 융합데이터 생성 기술 개발",
     agency: "농촌진흥청",
-    role: "공동책임",
-    period: "2026–2030",
   },
   {
     title: "융합데이터 기반 작물 생장 단계별 진단·처방 자동화 기술 개발",
     agency: "농촌진흥청",
-    role: "공동책임",
-    period: "2026–2030",
   },
   {
     title: "원적색광과 온도 상호작용 구명을 통한 작물 생장용 LED 조명 파장 최적화",
     agency: "한국연구재단",
-    role: "주관책임",
-    period: "2025–2026",
   },
 ];
 
@@ -216,27 +208,19 @@ export default function Page() {
         <div className="border border-gray-200 dark:border-neutral-700 rounded-xl overflow-hidden divide-y divide-gray-200 dark:divide-neutral-700 bg-white dark:bg-neutral-800/60">
           {/* Header row (desktop) */}
           <div className="hidden md:grid grid-cols-12 gap-4 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 bg-neutral-50 dark:bg-neutral-800">
-            <div className="col-span-7">Project</div>
+            <div className="col-span-10">Project</div>
             <div className="col-span-2">Agency</div>
-            <div className="col-span-2">Role</div>
-            <div className="col-span-1 text-right">Period</div>
           </div>
           {grants.map((grant, index) => (
             <div
               key={index}
               className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 px-5 py-4 hover:bg-olive-50/50 dark:hover:bg-olive-900/10 transition-colors"
             >
-              <div className="md:col-span-7 font-medium text-gray-900 dark:text-gray-100 leading-snug">
+              <div className="md:col-span-10 font-medium text-gray-900 dark:text-gray-100 leading-snug">
                 {grant.title}
               </div>
               <div className="md:col-span-2 text-sm text-olive-600 dark:text-olive-300 font-medium">
                 {grant.agency}
-              </div>
-              <div className="md:col-span-2 text-sm text-gray-600 dark:text-gray-300">
-                {grant.role}
-              </div>
-              <div className="md:col-span-1 md:text-right text-sm tabular-nums text-gray-500 dark:text-gray-400 whitespace-nowrap">
-                {grant.period}
               </div>
             </div>
           ))}

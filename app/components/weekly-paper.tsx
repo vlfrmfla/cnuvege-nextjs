@@ -9,71 +9,30 @@ type Paper = {
   created_at: string;
 };
 
-type WeeklyPaperResponse = {
-  week_start: string;
-  week_end: string;
+type LatestPaperResponse = {
   count: number;
   papers: Paper[];
 };
 
 const WEEKLY_PAPER_API_URL = "https://labmanager-nu.vercel.app/api/weekly-paper";
-const LOOKBACK_WEEKS = 16;
 const MAX_DISPLAY = 5;
 
-function shiftDate(isoDate: string, days: number): string {
-  const d = new Date(`${isoDate}T00:00:00Z`);
-  d.setUTCDate(d.getUTCDate() + days);
-  return d.toISOString().slice(0, 10);
-}
-
-async function fetchWeek(
-  apiKey: string,
-  weekParam?: string,
-): Promise<WeeklyPaperResponse | null> {
-  try {
-    const url = weekParam
-      ? `${WEEKLY_PAPER_API_URL}?week=${weekParam}`
-      : WEEKLY_PAPER_API_URL;
-    const res = await fetch(url, {
-      headers: { "x-api-key": apiKey },
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return null;
-    return (await res.json()) as WeeklyPaperResponse;
-  } catch {
-    return null;
-  }
-}
-
+// 기간과 무관하게 최신 MAX_DISPLAY개 (labmanager API의 ?limit 모드)
 async function getRecentPapers(): Promise<Paper[]> {
   const apiKey = process.env.WEEKLY_PAPER_API_KEY;
   if (!apiKey) return [];
 
-  const today = new Date().toISOString().slice(0, 10);
-  const weekParams = [
-    undefined,
-    ...Array.from({ length: LOOKBACK_WEEKS }, (_, i) =>
-      shiftDate(today, -7 * (i + 1)),
-    ),
-  ];
-
-  const results = await Promise.all(
-    weekParams.map((w) => fetchWeek(apiKey, w)),
-  );
-
-  const seen = new Set<string>();
-  const papers: Paper[] = [];
-  for (const r of results) {
-    if (!r) continue;
-    for (const p of r.papers) {
-      if (seen.has(p.id)) continue;
-      seen.add(p.id);
-      papers.push(p);
-    }
+  try {
+    const res = await fetch(`${WEEKLY_PAPER_API_URL}?limit=${MAX_DISPLAY}`, {
+      headers: { "x-api-key": apiKey },
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return [];
+    const data = (await res.json()) as LatestPaperResponse;
+    return (data.papers ?? []).slice(0, MAX_DISPLAY);
+  } catch {
+    return [];
   }
-
-  papers.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
-  return papers.slice(0, MAX_DISPLAY);
 }
 
 export async function WeeklyPaper() {
